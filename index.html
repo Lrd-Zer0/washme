@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>WashMe</title>
+        <link rel="stylesheet" href="template/css.css">
+    </head>
+
+    <body>
+        <h1><b><center>WashMe</center></b></h1>
+        <div class="immagini">
+
+    <div class="card">
+        <img src="images/shutze.jpg" class="foto">
+        <p id="conta1">0</p>
+        <p id="frase1">Pulito</p>
+        <button class="btn" onclick="mostra(1)">Premi</button>
+    </div>
+
+    <div class="card">
+        <img src="images/corteiz.jpg" class="foto">
+        <p id="conta2">0</p>
+        <p id="frase2">Pulito</p>
+        <button class="btn" onclick="mostra(2)">Premi</button>
+    </div>
+
+    <div class="card">
+        <img src="images/vertbrae.jpg" class="foto">
+        <p id="conta3">0</p>
+        <p id="frase3">Pulito</p>
+        <button class="btn" onclick="mostra(3)">Premi</button>
+    </div>
+
+</div>
+        <script>
+            let volte = 0;
+
+            function mostra() {
+                volte++;
+                if (volte === 4) {
+                    volte = 0;
+                }
+                document.getElementById("testo").innerText = volte;
+            }
+        </script>
+        <script>
+    let contatori = [0, 0, 0];
+
+    const frasi = [
+        "Pulito",
+        "Usato poco",
+        "Usato",
+        "Da lavare"
+    ];
+
+    function mostra(n) {
+        contatori[n - 1]++;
+
+        if (contatori[n - 1] === 4) {
+            contatori[n - 1] = 0;
+        }
+
+        document.getElementById("conta" + n).innerText = contatori[n - 1];
+        document.getElementById("frase" + n).innerText = frasi[contatori[n - 1]];
+    }
+</script>
+
+
+
+    </body>
+
+</html>
